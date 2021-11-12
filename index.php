@@ -32,14 +32,10 @@ if(isset($_SESSION['username']))  {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
-  <link rel="stylesheet"
-    href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css">
-  <link rel="stylesheet"
-    href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css">
+ 
   <link rel="stylesheet"
     href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
   <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
 
   <link rel="stylesheet" href="assets/css/app.css">
 
@@ -77,6 +73,7 @@ if(isset($_SESSION['username']))  {
       text-align: center;
     }
   </style>
+
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="  background-color: #6dae2b; border-color:#6dae2b
     ">
     <div class="container-fluid">
@@ -89,9 +86,7 @@ if(isset($_SESSION['username']))  {
         <a class="navbar-brand" href="#" style="margin-left: -10px;">Webmap</a>
       </div>
       <div class="navbar-collapse collapse">
-        <div class="navbar-right" style = "width: 200px;">
-        <div id="custom-map-controls" style = "width: 100%;"></div>
-  </div>
+     
         <ul class="nav navbar-nav">
           <?php  
           if(isset($_SESSION['username']))  
@@ -174,6 +169,13 @@ if(isset($_SESSION['username']))  {
 
             </ul>
           </li>
+
+          <li style = "padding-top:5px;">   <div class="locationSearchBox" style = "width: 200px;">
+        <div id="custom-map-controls" style = "width: 100%;"></div>
+  </div></li>
+
+
+
          
 
         </ul>
@@ -186,13 +188,18 @@ if(isset($_SESSION['username']))  {
       -->
     </div>
   </div>
+</div>
 
-  <div id="container">
-    <div class="row">
 
-      <div class="col-md-2" style="background-color: #c5c5c5; height: 800px;">
-        <div id="layerSelect" class="col-md-12" style="padding: 20px 0px 0px 20px;">
+  
+<div class="row">
+
+    <div class="col-md-2 greySidebar" style="background-color: #c5c5c5; height: 100%;">
+      <div class = "row">
+        <div id="layerSelect" class="col-md-12" style="padding: 20px 25px 0px 40px;">
+        <div class="row">
           <p style="font-weight: bold; margin: 0px; font-size: 16px;">Layer select</p>
+        </div>
           <br>
 
 
@@ -278,25 +285,24 @@ if(isset($_SESSION['username']))  {
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
+     </div>
+        
 
       <div class="col-10">
 
 
-        <div id="map" style="height: 800px;"></div>
+        <div id="map" style="height: 100%;"></div>
 
       </div>
     </div>
   </div>
+</div>
 
-  <!-- <div id="loading">
-      <div class="loading-indicator">
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-info progress-bar-full"></div>
-        </div>
-      </div>
-    </div>-->
+
 
   <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -319,7 +325,7 @@ if(isset($_SESSION['username']))  {
                     © Natural England</a></li>
                 <li class="AOCData"><a href="#theaters-tab" data-toggle="tab">Special Areas of
                     Conservation (England) © Natural England</a></li>
-                <li class="RiverHabitatData"><a href="#museums-tab" data-toggle="tab">Priority River Habitat -Headwater
+                <li class="RiverHabitatData"><a href="#priority-river-tab" data-toggle="tab">Priority River Habitat -Headwater
                     Areas © Natural
                     England</a></li>
 
@@ -456,7 +462,7 @@ if(isset($_SESSION['username']))  {
 
 
             </div>
-            <div class="tab-pane fade" id="museums-tab" style = " overflow:auto;">
+            <div class="tab-pane fade" id="priority-river-tab" style = " overflow:auto;">
               <p>Priority river data</p>
               <table id="landings_table-prh" class="stripe cell-border order-column hover" cellspacing="0"
              >
@@ -517,6 +523,7 @@ if(isset($_SESSION['username']))  {
       </div>  
  </div> 
 
+
  
 
  
@@ -562,7 +569,7 @@ if(isset($_SESSION['username']))  {
   <script
     src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
   <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
+  <script src="src/L.Control.OpenCageSearch.min.js"></script>
 
 
   <script src="assets/js/app.js"></script>
