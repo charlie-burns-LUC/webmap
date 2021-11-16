@@ -138,7 +138,7 @@ if(isset($_SESSION['username']))  {
               </li>
               <row>
 
-                <input type="checkbox" id="TopoSelect" name="scales"
+                <input type="checkbox" id="TopoSelect" name="scales" 
                   onClick="showBaseMap(openTopoBasemap, 'TopoSelect')">
                 <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="full-extent-btn"><i
                     class="fa fa-area-chart"></i>&nbsp;&nbsp;Topographical </a>
